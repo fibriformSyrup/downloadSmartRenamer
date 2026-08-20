@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Renamer</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .popup-container {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .status {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-container">
+        <div class="logo">📱</div>
+        <div class="title">Smart Renamer</div>
+        <div class="subtitle">智能文件重命名助手<br>右键图片选择"用 Smart Renamer 下载"</div>
+        
+        <div class="button-group">
+            <a href="options.html" target="_blank" class="btn btn-primary">⚙️ 设置</a>
+            <a href="#" class="btn" id="helpBtn">❓ 帮助</a>
+        </div>
+        
+        <div class="status" id="status">就绪</div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

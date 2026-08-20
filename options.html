@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Renamer 设置</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="miuix-container">
+        <!-- 顶部导航栏 -->
+        <header class="miuix-header">
+            <div class="miuix-title">Smart Renamer 设置</div>
+            <div class="miuix-subtitle">智能文件重命名管理</div>
+        </header>
+
+        <main class="miuix-main">
+            <!-- 基础设置 -->
+            <section class="miuix-section">
+                <h3 class="miuix-section-title">基础设置</h3>
+                <div class="miuix-card">
+                    <div class="miuix-form-group">
+                        <label class="miuix-switch">
+                            <input type="checkbox" id="enableRename">
+                            <span class="miuix-slider"></span>
+                            <span class="miuix-label-text">启用自动重命名</span>
+                        </label>
+                    </div>
+                    
+                    <div class="miuix-form-group">
+                        <label for="downloadPath" class="miuix-label">下载路径</label>
+                        <input type="text" id="downloadPath" class="miuix-input" placeholder="例如: SmartRenamer/">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 重命名规则 -->
+            <section class="miuix-section">
+                <div class="miuix-section-header">
+                    <h3 class="miuix-section-title">重命名规则</h3>
+                    <button id="addRule" class="miuix-button miuix-button-primary">添加规则</button>
+                </div>
+                
+                <div class="miuix-card">
+                    <div id="rulesContainer" class="miuix-rules-list">
+                        <!-- 规则将动态添加到这里 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 使用说明 -->
+            <section class="miuix-section">
+                <h3 class="miuix-section-title">使用说明</h3>
+                <div class="miuix-card">
+                    <div class="miuix-note">
+                        <h4>🎯 针对 X/Twitter 图片重命名</h4>
+                        <p>由于 X/Twitter 图片实际存储在 <code>pbs.twimg.com</code> 域名下，规则需要针对此域名设置。</p>
+                        <p>推荐规则示例：</p>
+                        <ul>
+                            <li><strong>域名:</strong> pbs.twimg.com</li>
+                            <li><strong>正则表达式:</strong> <code>media\/([A-Za-z0-9]+)</code></li>
+                            <li><strong>替换格式:</strong> <code>X_$1</code></li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 15px;">⚠️ 重要使用说明</h4>
+                        <ul>
+                            <li>Chrome 扩展 <strong>无法拦截</strong> 浏览器自带的"另存为"对话框</li>
+                            <li>要使用自动重命名功能，请使用以下方法之一：</li>
+                            <li>• 直接点击图片链接下载（不右键）</li>
+                            <li>• 使用右键菜单中的 <strong>"用 Smart Renamer 下载"</strong> 选项</li>
+                            <li>• 在设置中启用"自动下载图片"功能（需要额外配置）</li>
+                        </ul>
+                        <p><strong>提示：</strong>安装后需要刷新页面才能看到新的右键菜单项。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部操作栏 -->
+        <footer class="miuix-footer">
+            <button id="saveBtn" class="miuix-button miuix-button-primary miuix-button-full">保存设置</button>
+            <button id="resetBtn" class="miuix-button miuix-button-secondary miuix-button-full">恢复默认</button>
+        </footer>
+    </div>
+
+    <!-- 规则模板 -->
+    <template id="ruleTemplate">
+        <div class="miuix-rule-item">
+            <div class="miuix-rule-header">
+                <label class="miuix-switch">
+                    <input type="checkbox" class="rule-enabled">
+                    <span class="miuix-slider"></span>
+                </label>
+                <div class="miuix-rule-actions">
+                    <button class="miuix-button miuix-button-icon move-up" title="上移">↑</button>
+                    <button class="miuix-button miuix-button-icon move-down" title="下移">↓</button>
+                    <button class="miuix-button miuix-button-icon delete-rule" title="删除">×</button>
+                </div>
+            </div>
+            
+            <div class="miuix-form-grid">
+                <div class="miuix-form-group">
+                    <label class="miuix-label">域名</label>
+                    <input type="text" class="miuix-input rule-domain" placeholder="例如: pbs.twimg.com">
+                </div>
+                
+                <div class="miuix-form-group">
+                    <label class="miuix-label">正则表达式</label>
+                    <input type="text" class="miuix-input rule-pattern" placeholder="例如: media/([A-Za-z0-9]+)">
+                </div>
+                
+                <div class="miuix-form-group">
+                    <label class="miuix-label">替换格式</label>
+                    <input type="text" class="miuix-input rule-replacement" placeholder="例如: X_$1">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="options.js"></script>
+</body>
+</html>

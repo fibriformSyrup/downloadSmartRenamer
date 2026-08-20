@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#4285f4"/>
+  <path d="M20 20 L108 20 L108 84 L64 108 L20 84 Z" fill="#ffffff" stroke="#cccccc" stroke-width="2"/>
+  <circle cx="64" cy="60" r="15" fill="#4285f4"/>
+  <path d="M40 40 Q64 25 88 40" stroke="#4285f4" stroke-width="4" fill="none"/>
+  <text x="64" y="115" text-anchor="middle" font-family="Arial" font-size="16" fill="white">重命名</text>
+</svg>

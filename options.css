@@ -1,0 +1,346 @@
+/* Miuix 风格样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.miuix-container {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部导航栏 */
+.miuix-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.miuix-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.miuix-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 主要内容区域 */
+.miuix-main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* 节区样式 */
+.miuix-section {
+    margin-bottom: 24px;
+}
+
+.miuix-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.miuix-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* 卡片容器 */
+.miuix-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* 表单元素 */
+.miuix-form-group {
+    margin-bottom: 16px;
+}
+
+.miuix-label {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.miuix-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.miuix-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* 开关样式 */
+.miuix-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.miuix-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.miuix-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    transition: .4s;
+    margin-right: 12px;
+}
+
+.miuix-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.miuix-switch input:checked + .miuix-slider {
+    background-color: #667eea;
+}
+
+.miuix-switch input:checked + .miuix-slider:before {
+    transform: translateX(20px);
+}
+
+.miuix-label-text {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 按钮样式 */
+.miuix-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+}
+
+.miuix-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.miuix-button:active {
+    transform: translateY(0);
+}
+
+.miuix-button-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.miuix-button-primary:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.miuix-button-secondary {
+    background: #f0f0f0;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.miuix-button-secondary:hover {
+    background: #e8e8e8;
+}
+
+.miuix-button-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.miuix-button-full {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* 规则列表 */
+.miuix-rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.miuix-rule-item {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.miuix-rule-item:hover {
+    border-color: #667eea;
+    background: white;
+}
+
+.miuix-rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.miuix-rule-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.miuix-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    .miuix-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .miuix-form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 提示卡片 */
+.miuix-note {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 16px;
+    color: #856404;
+}
+
+.miuix-note h4 {
+    margin-bottom: 8px;
+    color: #856404;
+}
+
+.miuix-note ul {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+.miuix-note li {
+    margin-bottom: 4px;
+}
+
+/* 底部操作栏 */
+.miuix-footer {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .miuix-container {
+        margin: 0;
+    }
+    
+    .miuix-header {
+        padding: 16px;
+    }
+    
+    .miuix-main {
+        padding: 16px;
+    }
+    
+    .miuix-card {
+        padding: 16px;
+    }
+    
+    .miuix-section-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+}
+
+/* 加载动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.miuix-rule-item {
+    animation: fadeIn 0.3s ease;
+}
+
+/* 错误状态 */
+.miuix-input.error {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+/* 成功状态 */
+.miuix-input.success {
+    border-color: #28a745;
+    background-color: #f0fff4;
+}
