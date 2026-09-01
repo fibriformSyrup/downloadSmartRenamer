@@ -344,3 +344,95 @@ body {
     border-color: #28a745;
     background-color: #f0fff4;
 }
+
+/* Preset select dropdown (Plan 5) */
+.miuix-select {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #fafafa;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    height: 38px;
+}
+
+.miuix-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Section action group (preset dropdown + buttons) */
+.miuix-section-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Footer row layout (Plan 5: export/import row) */
+.miuix-footer-row {
+    display: flex;
+    gap: 8px;
+}
+
+.miuix-button-flex {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Test result panel (Plan 4) */
+.miuix-test-result {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.miuix-test-result--match {
+    background: #e6f9ec;
+    border: 1px solid #a3d9b1;
+    color: #1d6b35;
+}
+
+.miuix-test-result--nomatch {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+}
+
+.miuix-test-result code {
+    background: rgba(0,0,0,0.08);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+/* Empty rules hint */
+.miuix-empty-hint {
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    padding: 16px 0 4px;
+}
+
+/* Rule title in header */
+.miuix-rule-header .miuix-label-text {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .miuix-section-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .miuix-select {
+        width: 100%;
+    }
+}
